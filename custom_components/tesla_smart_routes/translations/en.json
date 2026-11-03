@@ -1,0 +1,128 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Tesla Nav — Connect to Tesla",
+        "description": "Enter your Tesla developer app credentials. You will be redirected to Tesla to sign in.",
+        "data": {
+          "client_id": "Client ID",
+          "client_secret": "Client Secret",
+          "proxy_url": "Proxy URL",
+          "proxy_certificate_sha256": "Local proxy certificate SHA-256 fingerprint"
+        }
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Only one Tesla Nav integration is allowed."
+    },
+    "error": {
+      "invalid_proxy_settings": "Use an HTTPS base URL and the exact SHA-256 certificate fingerprint from the local proxy log."
+    }
+  },
+  "config_subentries": {
+    "route": {
+      "entry_type": "Tesla route",
+      "initiate_flow": {
+        "user": "Add route"
+      },
+      "create_entry": {
+        "default": "Route added successfully."
+      },
+      "step": {
+        "user": {
+          "title": "Add route",
+          "description": "Configure the route.",
+          "data": {
+            "name": "Route name"
+          }
+        },
+        "vin_source": {
+          "title": "Vehicle selection",
+          "description": "How should the target vehicle be identified?",
+          "data": {
+            "vin_source": "Method"
+          }
+        },
+        "vin_manual": {
+          "title": "Vehicle VIN",
+          "description": "Enter the VIN of the target vehicle.",
+          "data": {
+            "vin": "VIN"
+          }
+        },
+        "vin_entity": {
+          "title": "Vehicle entity",
+          "description": "Select the HA entity whose state is the vehicle VIN.",
+          "data": {
+            "vin_entity": "Entity"
+          }
+        },
+        "add_waypoint": {
+          "title": "Add waypoints",
+          "description": "Waypoints added so far:\n{waypoints}\n\nLeave label and Place ID empty to finish without adding another.\n{maps_url}",
+          "data": {
+            "label": "Label",
+            "place_id": "Place ID",
+            "action": "Then"
+          }
+        },
+        "reconfigure": {
+          "title": "Edit route — what would you like to change?",
+          "menu_options": {
+            "edit_route": "Edit route name",
+            "edit_vehicle": "Edit vehicle",
+            "edit_waypoints": "Manage waypoints"
+          }
+        },
+        "edit_route": {
+          "title": "Edit route name",
+          "data": {
+            "name": "Route name"
+          }
+        },
+        "manage_waypoints": {
+          "title": "Manage waypoints",
+          "description": "Current waypoints:\n{waypoints}{maps_url}",
+          "data": {
+            "waypoint_action": "Action",
+            "waypoint_index": "Select waypoint"
+          }
+        },
+        "add_single_waypoint": {
+          "title": "Add waypoint",
+          "description": "Leave both fields empty and submit to go back without adding.",
+          "data": {
+            "label": "Label",
+            "place_id": "Place ID"
+          }
+        },
+        "select_waypoint": {
+          "title": "Select waypoint",
+          "data": {
+            "waypoint_index": "Waypoint"
+          }
+        },
+        "manage_waypoint_action": {
+          "title": "What do you want to do?",
+          "description": "Selected waypoint: {label}",
+          "data": {
+            "waypoint_edit_action": "Action"
+          }
+        },
+        "edit_waypoint": {
+          "title": "Edit waypoint",
+          "data": {
+            "label": "Label",
+            "place_id": "Place ID"
+          }
+        }
+      },
+      "error": {
+        "waypoint_incomplete": "Both label and Place ID are required."
+      },
+      "abort": {
+        "reconfigure_successful": "Route updated successfully."
+      }
+    }
+  }
+}

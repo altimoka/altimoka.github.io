@@ -1,0 +1,13 @@
+name: "Teca Tesla útvonal-aláíró (próba)"
+description: "Tesla VCP proxy — signs navigation commands for Tesla Fleet API"
+version: "1.0.1"
+slug: "teca_tesla_proxy"
+init: false
+arch:
+  - aarch64
+  - amd64
+map:
+  - config:ro
+  - data:rw
+ports:
+  4443/tcp: 4443

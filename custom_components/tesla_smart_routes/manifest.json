@@ -1,0 +1,12 @@
+{
+  "domain": "tesla_smart_routes",
+  "name": "Tesla Smart Routes",
+  "codeowners": ["@Briochorama"],
+  "config_flow": true,
+  "documentation": "https://github.com/Briochorama/tesla-smart-routes",
+  "iot_class": "cloud_push",
+  "issue_tracker": "https://github.com/Briochorama/tesla-smart-routes/issues",
+  "requirements": [],
+  "single_config_entry": true,
+  "version": "0.1.3"
+}
