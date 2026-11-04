@@ -7,7 +7,7 @@ RUN git clone https://github.com/teslamotors/vehicle-command.git . && \
     go build -o tesla-http-proxy ./cmd/tesla-http-proxy
 
 FROM alpine:latest
-RUN apk add --no-cache openssl
+RUN apk add --no-cache openssl ca-certificates
 COPY --from=builder /build/tesla-http-proxy /usr/local/bin/tesla-http-proxy
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
